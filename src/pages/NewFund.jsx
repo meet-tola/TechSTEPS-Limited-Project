@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FormInput from "../components/FormInput";
-import { supabase } from "../database/supabase";
+import { supabase } from "../database";
 import { newFundsData } from "../data";
 
 const NewFund = () => {

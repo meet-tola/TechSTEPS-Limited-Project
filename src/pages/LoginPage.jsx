@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Input from "../components/Input";
-import { supabase } from "../database/supabase";
+import { supabase } from "../database";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 

@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Input from "../components/Input";
-import { supabase } from "../api/supabase";
+import { supabase } from "../database";
 import { useState } from "react";
 
 const Signup = () => {
