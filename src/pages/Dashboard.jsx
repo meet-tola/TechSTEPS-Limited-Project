@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import FormInput from "../components/FormInput";
-import { supabase } from "../api/supabase";
+import { supabase } from "../database/supabase";
 import { customerData } from "../data";
 
 const Dashboard = () => {
