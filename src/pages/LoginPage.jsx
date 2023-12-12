@@ -11,8 +11,6 @@ const Login = ({ setToken }) => {
     password: "",
   });
 
-  console.log(formData);
-
   function handleChange(event) {
     setFormData((prevFormData) => {
       return {
