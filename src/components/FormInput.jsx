@@ -1,5 +1,18 @@
 /* eslint-disable react/prop-types */
-const FormInput = ({ label, id, type, value, placeholder, options, onChange, columnWidth }) => {
+/**
+ * Form Input Component Structured
+ */
+
+const FormInput = ({
+  label,
+  id,
+  type,
+  value,
+  placeholder,
+  options,
+  onChange,
+  columnWidth,
+}) => {
   const columnClass = `w-full md:${columnWidth} px-3 mb-6 md:mb-0`;
 
   return (
@@ -7,7 +20,8 @@ const FormInput = ({ label, id, type, value, placeholder, options, onChange, col
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
         {label}
       </label>
-      {type === 'select' ? (
+      {/* Select Dropdown structure  */}
+      {type === "select" ? (
         <div className="relative">
           <select
             className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -15,7 +29,9 @@ const FormInput = ({ label, id, type, value, placeholder, options, onChange, col
             value={value}
             onChange={onChange}
           >
-            <option value="" disabled>Select {label}</option>
+            <option value="" disabled>
+              Select {label}
+            </option>
             {options.map((option, index) => (
               <option key={index} value={option.value}>
                 {option.label}
@@ -32,10 +48,12 @@ const FormInput = ({ label, id, type, value, placeholder, options, onChange, col
             </svg>
           </div>
         </div>
-      ) : type === 'checkbox' ? (
-        <div className="flex items-center absolute mb-7">
+      )
+       : type === "checkbox" ? (
+        // checkbox structure 
+        <div className="flex items-center flex-wrap relative mb-7">
           {options.map((option, index) => (
-            <div key={index} className="mr-[72px]">
+            <div key={index} className="mr-6 mb-4 md:mr-8 md:mb-0">
               <input
                 type="checkbox"
                 id={`${id}-${index}`}
@@ -48,13 +66,14 @@ const FormInput = ({ label, id, type, value, placeholder, options, onChange, col
                     : value.filter((val) => val !== option.value);
                   onChange({ target: { id, value: updatedValue } });
                 }}
-                className="mr-10"
+                className="mr-2"
               />
-              <label htmlFor={`${id}-${index}`} >{option.label}</label>
+              <label htmlFor={`${id}-${index}`}>{option.label}</label>
             </div>
           ))}
         </div>
       ) : (
+       // input structure 
         <input
           className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           id={id}

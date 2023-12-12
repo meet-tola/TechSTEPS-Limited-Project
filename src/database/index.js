@@ -1,3 +1,4 @@
+// Access to Database
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = "https://dpdbkqkvteuumqbaawxi.supabase.co"

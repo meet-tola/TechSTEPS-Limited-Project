@@ -4,6 +4,11 @@ import FormInput from "../components/FormInput";
 import { supabase } from "../database";
 import { customerData } from "../data";
 
+/**
+ * Dashboard component represents a form for capturing new customer details.
+ * It includes sections for bvn details, firstname, and surname.
+ */
+
 const Dashboard = () => {
   const [formData, setFormData] = useState(customerData);
 
@@ -38,7 +43,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="sm:mt-[1500px] md:mt-[20px] lg:mt-[400px]">
+    <div className="mt-[1900px] md:mt-[400px] lg:mt-[400px]">
       <div className="flex flex-wrap sm:-mx-3 md:-mx-3 lg:-mx-[390px] mb-4 text-white bg-purple-600 px-5 py-4 rounded-xl text-2xl font-semibold">
         Create Customer
       </div>

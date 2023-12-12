@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png"
+/**
+ * Header Component for the login and Signup page
+ */
 
 const Header = ({ heading, paragraph, linkName, linkUrl = "#" }) => {
   return (

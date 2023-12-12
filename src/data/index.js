@@ -1,3 +1,5 @@
+// All data structured
+
 export const customerData = {
     bvn: "",
     firstName: "",

@@ -3,6 +3,9 @@ import Input from "../components/Input";
 import { supabase } from "../database";
 import { useState } from "react";
 
+//  Signup Page, Users sign up for a new account 
+//  alert notification for user to check email for confirmation
+
 const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",

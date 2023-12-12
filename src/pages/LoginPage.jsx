@@ -4,6 +4,11 @@ import { supabase } from "../database";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+
+//  Login Page, Users sign in if they is an account in the database
+//  alert notification for invalid crendeciaL 
+
+ 
 const Login = ({ setToken }) => {
   let navigate = useNavigate();
   const [formData, setFormData] = useState({

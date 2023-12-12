@@ -1,11 +1,18 @@
+// Import necessary dependencies
 import { useState } from "react";
 import FormInput from "../components/FormInput";
 import { supabase } from "../database";
 import { newFundsData } from "../data";
 
+/**
+ * NewFund component represents a form for capturing new fund deposit details.
+ * It includes sections for transaction details, ledger info, and comments.
+ */
 const NewFund = () => {
+  // State to manage form data
   const [formData, setFormData] = useState(newFundsData);
 
+  // Event handler for handling form input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -13,6 +20,7 @@ const NewFund = () => {
     });
   };
 
+  // Event handler for form submission
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -34,15 +42,22 @@ const NewFund = () => {
     }
   };
 
+  // JSX structure for the NewFund component
   return (
-    <div className="sm:mt-[1500px] md:mt-[20px] lg:mt-[450px]">
+    <div className="mt-[1800px] md:mt-[450px] lg:mt-[400px]">
+      {/* Header section for New Fund Deposit */}
       <div className="flex flex-wrap sm:-mx-3 md:-mx-3 lg:-mx-[490px] mb-4 text-white bg-purple-600 px-[100px] py-4 rounded-xl text-2xl font-semibold">
         New Fund Deposit
       </div>
+
+      {/* Transaction Details section */}
       <div className="flex flex-wrap sm:-mx-3 md:-mx-3 mb-4 lg:-mx-[390px] text-white bg-[#4e9ab1] px-5 py-4 rounded-xl text-2xl font-semibold">
         Transaction Details
       </div>
+
+      {/* Form for capturing transaction details */}
       <form className="w-full max-w-[1200px]">
+        {/* Input fields for Fund MID, Client ID, and Client Name */}
         <div className="flex flex-wrap sm:-mx-3 md:-mx-3 lg:-mx-[400px] mb-6">
           <FormInput
             label="Fund MID"
@@ -165,7 +180,7 @@ const NewFund = () => {
         <div className="flex  flex-wrap sm:-mx-3 md:-mx-3 lg:-mx-[400px] mb-6">
           <FormInput
             id="interestValue"
-            type="checkbox" // Change the type to 'checkbox'
+            type="checkbox"
             options={[
               { label: "Upfront Interest", value: "Upfront Interest" },
               { label: "Monthly Interest", value: "Monthly Interest" },
@@ -181,10 +196,12 @@ const NewFund = () => {
         </div>
       </form>
 
-      <div className="flex flex-wrap sm:-mx-3 md:-mx-3 mb-4 mt-[60px] lg:-mx-[390px] text-white bg-[#4e9ab1] px-5 py-4 rounded-xl text-2xl font-semibold">
+      {/* Ledger Info Details section */}
+      <div className="flex flex-wrap sm:-mx-3 md:-mx-3 mb-4 lg:-mx-[390px] text-white bg-[#4e9ab1] px-5 py-4 rounded-xl text-2xl font-semibold">
         Ledger Info
       </div>
 
+      {/* Form for capturing ledger info details */}
       <form className="w-full max-w-[1200px]">
         <div className="flex flex-wrap sm:-mx-3 md:-mx-3 lg:-mx-[400px] mb-6">
           <FormInput
@@ -244,6 +261,7 @@ const NewFund = () => {
         </div>
       </form>
 
+      {/* Comment section */}
       <div className="flex flex-wrap sm:-mx-3 md:-mx-3 mb-4 lg:-mx-[390px] text-white bg-[#4e9ab1] px-5 py-4 rounded-xl text-2xl font-semibold">
         Comments
       </div>
